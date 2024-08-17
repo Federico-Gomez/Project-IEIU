@@ -1,0 +1,107 @@
+.navbarDark {
+    background-color: #eb5e00;
+}
+
+.stickyTop {
+    position: sticky;
+    top: 0;
+    z-index: 1050;
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+    margin-left: 20px;
+}
+
+.navLink {
+    color: white;
+    transition: font-weight 0.2s ease;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.navLink:hover {
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+}
+
+.middleContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 900px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.dropdownProfile {
+    margin-right: 20px;
+}
+
+.dropdownToggle {
+    color: white;
+    font-size: 18px;
+}
+
+.dropdownToggle:hover {
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+}
+
+.dropdownToggle::after {
+    
+    display: none;
+}
+
+.dropdownMenu {
+    background-color: #eb5e00;
+}
+
+.dropdownItem {
+    color: white;
+}
+
+.dropdownItem:hover {
+    background-color: #99a3ad;
+}
+
+.formControl {
+    width: auto;
+    background-color: white;
+    border: 1px solid #6c757d;
+    color: white; 
+}
+
+.btn {
+    color: white;
+    background-color: #3c3d3d;
+    border-color: #3c3d3d;
+}
+
+.btn:hover {
+    color: white;
+    background-color: #000000;
+    border-color: #000000;
+}
+
+.navbarToggler {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbarTogglerIcon {
+    color: white;
+}
+
+.navItem {
+    color: white;
+    padding: 10px;
+}
+
+.profileIcon {
+    margin-right: 10px;
+}
+
+.collapse {
+    flex-grow: 1;
+}
