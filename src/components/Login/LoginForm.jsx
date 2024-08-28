@@ -43,38 +43,41 @@ const LoginForm = ({ onLogin }) => {
     }
     
     return (
-        <div className={styles.loginFormContainer}>
-            <img src="/Login.png" alt="loginLogo" className={styles.loginLogo} />
-            <h1 className={styles.title}>Login</h1>
-            <form onSubmit={handleSubmit} className={styles.loginForm}>
-                <div className={styles.formGroup}>
-                    <label htmlFor="email">Email</label>
-                    <input 
-                        type="email"
-                        id='email'
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                        className={styles.formControl}
-                    />
-                </div>
-                <div className={styles.formGroup}>
-                    <label htmlFor="password">Password</label>
-                    <input 
-                        type="password"
-                        id='password'
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                        className={styles.formControl}
-                    />
-                </div>
-                {error && <p className={styles.error}>{error}</p>}
-                <button type='submit' className={styles.submitButton}>
-                    {isLoading ? 'Logging in...' : 'Login'}
-                </button>
-            </form>
+        <div className={styles.wrapper}>
+            <div className={styles.loginFormContainer}>
+                <img src="/Login.png" alt="loginLogo" className={styles.loginLogo} />
+                
+                <form onSubmit={handleSubmit} className={styles.loginForm}>
+                    <div className={styles.formGroup}>
+                        <label htmlFor="email">Email</label>
+                        <input 
+                            type="email"
+                            id='email'
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                            className={styles.formControl}
+                        />
+                    </div>
+                    <div className={styles.formGroup}>
+                        <label htmlFor="password">Password</label>
+                        <input 
+                            type="password"
+                            id='password'
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                            className={styles.formControl}
+                        />
+                    </div>
+                    {error && <p className={styles.error}>{error}</p>}
+                    <button type='submit' className={styles.submitButton}>
+                        {isLoading ? 'Logging in...' : 'Login'}
+                    </button>
+                </form>
+            </div>
         </div>
+        
     );
 };
 

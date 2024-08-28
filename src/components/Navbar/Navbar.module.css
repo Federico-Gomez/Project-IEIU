@@ -14,11 +14,15 @@
     margin-left: 20px;
 }
 
+.navbarNav {
+    margin-left: 100px;
+}
+
 .navLink {
     color: white;
     transition: font-weight 0.2s ease;
-    font-size: 18px;
-    margin-right: 10px;
+    font-size: 22px;
+    margin-right: 20px;
 }
 
 .navLink:hover {
@@ -63,7 +67,9 @@
 }
 
 .dropdownItem:hover {
-    background-color: #99a3ad;
+    background-color: #eb5e00;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
 }
 
 .formControl {

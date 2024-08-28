@@ -1,15 +1,26 @@
+.wrapper {
+    background-color: #121314;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .loginFormContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 80vh;
     background-color: #f8f9fa;
+    width: 360px;
+    border-radius: 8px;
 }
 
 .loginLogo {
     display: block;
-    margin: 0 auto 40px;
+    margin-top: 30px;
+    padding-bottom: 20px;
     width: 300px;
     height: auto;
 }
@@ -17,7 +28,6 @@
 
 .title {
     font-size: 2rem;
-    margin-bottom: 1rem;
     color: #343a40;
 }
 
@@ -26,8 +36,8 @@
     max-width: 400px;
     background: "ffffff";
     padding: 2rem;
+    padding-bottom: 0;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .formGroup {
@@ -62,6 +72,8 @@ label {
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .submitButton:hover {

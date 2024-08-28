@@ -1,13 +1,41 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Link } from "react-router-dom";
 import styles from './Navbar.module.css';
 
-const Navbar = ({ user }) => {
+const Navbar = ({ user, onLogout, 
+     onSelectCollection 
+}) => {
     console.log(user);
+
+    // const navigate = useNavigate();
+
+    const handleSelect = (collection) => {
+        onSelectCollection(collection);
+    };
+
+    // const handleLogout = () => {
+    //     // API call to logout endpoint
+    //     fetch('https://localhost:8080/logout', {
+    //         method: 'POST',
+    //         credentials: 'include' // cookies
+    //     })
+    //     .then(response => {
+    //         if (response.ok) {
+    //             navigate('/login');
+    //         }
+    //     })
+    //     .catch(error => {
+    //         console.error('Error al cerrar sesión:', error)
+    //     });
+
+    //     navigate('/login');
+    // };
+
     return (
         <nav className={`navbar navbar-expand-lg ${styles.navbarDark} ${styles.bgDark} ${styles.stickyTop}`}>
-            <a className="navbar-brand" href="#">
+            <Link to={"/"} className="navbar-brand">
                 <img src="/Exportainer logo.png" alt="logo" className={styles.logo} />
-            </a>
+            </Link>
             <button
                 className={`navbar-toggler ${styles.navbarToggler}`}
                 type="button"
@@ -23,31 +51,36 @@ const Navbar = ({ user }) => {
                 <div className={styles.middleContainer}>
                     <ul className={`navbar-nav mr-auto ${styles.navbarNav}`}>
                         <li className={`nav-item active ${styles.navItem}`}>
-                            <a className={`nav-link ${styles.navLink}`} href="#">
+                            <Link 
+                                className={`nav-link ${styles.navLink}`} 
+                                to="/clientes"
+                                 onClick={() => handleSelect('users')}
+                                >
                                 {/* <i className="fas fa-box"></i>  */}
                                 Clientes
-                            </a>
+                            </Link>
                         </li>
                         <li className={`nav-item ${styles.navItem}`}>
-                            <a className={`nav-link ${styles.navLink}`} href="#">
+                            <Link 
+                                className={`nav-link ${styles.navLink}`} 
+                                to="/proveedores"
+                                onClick={() => handleSelect('products')}
+                                >
                                 {/* <i className="fas fa-truck"></i>  */}
-                                Mudanzas
-                            </a>
-                        </li>
-                        <li className={`nav-item ${styles.navItem}`}>
-                            <a className={`nav-link ${styles.navLink}`} href="#">
-                                {/* <i className="fas fa-shipping-fast"></i>  */}
                                 Proveedores
-                            </a>
+                            </Link>
                         </li>
                         <li className={`nav-item ${styles.navItem}`}>
-                            <a className={`nav-link ${styles.navLink}`} href="#">
-                                {/* <i className="fas fa-file-invoice"></i>  */}
-                                Facturación
-                            </a>
+                            <Link 
+                                className={`nav-link ${styles.navLink}`}
+                                to="/mudanzas"
+                                >
+                                {/* <i className="fas fa-shipping-fast"></i>  */}
+                                Mudanzas
+                            </Link>
                         </li>
                     </ul>
-                    <form className={`form-inline my-2 my-lg-0 ${styles.formInline}`}>
+                    {/* <form className={`form-inline my-2 my-lg-0 ${styles.formInline}`}>
                         <input 
                             className={`form-control mr-sm-2 ${styles.formControl}`}
                             type="search" 
@@ -57,7 +90,7 @@ const Navbar = ({ user }) => {
                         <button className={`btn btn-outline-success my-2 my-sm-0 ${styles.btn}`} type="submit">
                             Buscar
                         </button>
-                    </form>
+                    </form> */}
                 </div>
                 <ul className={`navbar-nav ml-auto ${styles.navbarNav}`}>
                     <li className={styles.dropdownProfile}>
@@ -74,13 +107,14 @@ const Navbar = ({ user }) => {
                         </a>
                         <div className={`dropdown-menu dropdown-menu-right ${styles.dropdownMenu}`} aria-labelledby="navbarDropdown">
                             <a className={`dropdown-item ${styles.dropdownItem}`} href="#">
-                                Mi Perfil
-                            </a>
-                            <a className={`dropdown-item ${styles.dropdownItem}`} href="#">
-                                Configuración
+                                Pendiente
                             </a>
                             <div className={`dropdown-divider ${styles.dropdownDivider}`}></div>
-                            <a className={`dropdown-item ${styles.dropdownItem}`} href="#">
+                            <a 
+                            className={`dropdown-item ${styles.dropdownItem}`} 
+                            href="#"
+                            onClick={onLogout}
+                            >
                                 Cerrar Sesión
                             </a>
                         </div>
